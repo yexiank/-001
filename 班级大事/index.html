@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人网站</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">我的主页</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#events">班级大事</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#social">社交媒体</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main>
+        <!-- 轮播图部分 -->
+        <section id="home" class="carousel-section">
+            <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- 轮播图内容将由 JavaScript 动态生成 -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
+
+        <!-- 班级大事时间轴 -->
+        <section id="events" class="container section-padding">
+            <h2 class="text-center mb-4">班级大事</h2>
+            <div class="timeline">
+                <!-- 时间轴内容将由 JavaScript 动态生成 -->
+            </div>
+        </section>
+
+        <!-- 社交媒体 -->
+        <section id="social" class="container section-padding">
+            <h2 class="text-center mb-4">联系方式</h2>
+            <div class="social-icons text-center">
+                <!-- 社交媒体图标将由 JavaScript 动态生成 -->
+            </div>
+            <div class="text-center mt-3">
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#aboutModal">
+                    关于我
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-light py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 我的个人网站. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 添加弹窗 -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="aboutModalLabel">关于我</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>大家好，我是王家烨，目前是一名大一学生。我是一个安静、内敛的人，喜欢独处的时光。</p>
+                    <p>兴趣爱好：看书、看风景、写代码、学习新知识</p>
+                    <p>性格特点：喜欢安静，不喜欢吵闹</p>
+                    <p>目前正在学习和探索中...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
