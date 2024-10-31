@@ -1,0 +1,19 @@
+personal-website/
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   ├── main.js
+│   └── data.js
+└── images/
+    ├── carousel/
+    │   ├── slide1.jpg
+    │   └── slide2.jpg
+    ├── events/
+    │   ├── event1.jpg
+    │   └── event2.jpg
+    ├── avatar.jpg
+    └── icons/
+        ├── wechat.png
+        ├── qq.png
+        └── weibo.png 
