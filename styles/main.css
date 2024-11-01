@@ -9,7 +9,10 @@ body {
     font-family: 'Noto Sans SC', sans-serif;
     line-height: 1.6;
     color: #333;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+    background-color: #f8f9fa;
+    background-image: radial-gradient(#2196f3 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: -25px -25px;
 }
 
 /* 导航栏样式 */
@@ -17,7 +20,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(51, 51, 51, 0.95);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 1000;
 }
@@ -25,7 +28,10 @@ body {
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-links {
@@ -33,11 +39,12 @@ body {
     display: flex;
     justify-content: center;
     gap: 2.5rem;
+    margin: 0;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #555;
+    color: #fff;
     font-size: 1.1rem;
     transition: all 0.3s ease;
     padding: 0.5rem 1rem;
@@ -65,12 +72,10 @@ body {
     display: flex;
     align-items: center;
     gap: 4rem;
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05),
-                0 3px 6px rgba(0, 0, 0, 0.02);
-    backdrop-filter: blur(10px);
+    background-color: white;
     padding: 3rem;
     border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
 .profile-photo {
@@ -336,155 +341,176 @@ body {
     transform: scaleX(1);
 }
 
-/* 修改响应式设计部分 */
-@media screen and (max-width: 768px) {
-    /* 移动端适配 */
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        width: 100%;
-        overflow-x: hidden;
-    }
-
-    /* 导航栏 */
-    .navbar {
-        height: 50px;
-        padding: 0;
-    }
-
-    .nav-container {
-        height: 100%;
-        padding: 0;
+/* 添加响应式设计 */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
     }
 
     .nav-links {
-        height: 100%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        gap: 0;
-    }
-
-    .nav-links li {
-        height: 100%;
-    }
-
-    .nav-links a {
-        height: 100%;
-        font-size: 12px;
-        padding: 5px;
-        display: flex;
         flex-direction: column;
-        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    .profile-info h1 {
+        font-size: 2.5rem;
+    }
+
+    .profile-stats {
+        flex-wrap: wrap;
         justify-content: center;
     }
-
-    .nav-links i {
-        font-size: 16px;
-        margin: 0 0 3px 0;
-    }
-
-    /* 内容区域 */
-    .section {
-        width: 100%;
-        padding: 10px;
-        margin-top: 50px;
-        min-height: auto;
-    }
-
-    /* 个人简介 */
-    .profile-container {
-        width: calc(100% - 20px);
-        margin: 10px;
-        padding: 15px;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .profile-photo {
-        width: 150px;
-        max-width: 150px;
-        margin: 0 auto;
-    }
-
-    /* 教育经历 */
-    .education-container {
-        width: 100%;
-        gap: 10px;
+    
+    .stat-item {
+        flex: 1 1 120px;
     }
 
     .education-group {
         grid-template-columns: 1fr;
-        gap: 10px;
+    }
+    
+    .education-item {
+        padding: 1.5rem;
+    }
+} 
+
+/* 移动端导航栏样式 */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* 响应式布局 */
+@media screen and (max-width: 768px) {
+    /* 导航栏调整 */
+    .mobile-menu-btn {
+        display: block;
+        color: #fff;
     }
 
-    /* 特点与爱好 */
-    .interests-container {
+    .nav-links {
+        display: none;
         width: 100%;
-        grid-template-columns: 1fr;
-        gap: 10px;
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: rgba(51, 51, 51, 0.95);
+        padding: 10px 0;
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
     }
 
-    /* 技能特长 */
-    .skills-container {
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0;
         width: 100%;
-        grid-template-columns: 1fr;
-        gap: 10px;
+        text-align: center;
     }
 
-    /* 所有卡片通用样式 */
-    .education-item,
-    .interest-item,
-    .skill-item {
-        width: calc(100% - 20px);
-        margin: 10px;
+    .nav-links a {
+        display: block;
         padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* 联系方式 */
-    .contact-container {
-        width: calc(100% - 20px);
-        margin: 10px;
-        padding: 15px;
+    .nav-links li:last-child a {
+        border-bottom: none;
     }
 
-    /* 文字大小调整 */
-    .section-title {
-        font-size: 20px;
+    /* 个人简介部分调整 */
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .profile-photo img {
+        width: 200px;
+        height: auto;
+    }
+
+    .profile-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* 教育经历部分调整 */
+    .education-group {
+        flex-direction: column;
+    }
+
+    .education-item {
+        width: 100%;
         margin: 10px 0;
     }
 
-    .profile-info h1 {
-        font-size: 24px;
-        text-align: center;
+    /* 特点与爱好部分调整 */
+    .interests-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
-    .profile-info h2 {
-        font-size: 16px;
-        text-align: center;
+    /* 技能特长部分调整 */
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
-    .tagline {
-        font-size: 14px;
-        text-align: center;
+    /* 联系方式部分调整 */
+    .contact-container {
+        flex-direction: column;
+        padding: 20px;
     }
 
-    .brief-intro {
-        font-size: 14px;
-        text-align: center;
+    .contact-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* 通用section调整 */
+    .section {
+        padding: 80px 20px;
     }
 }
 
-/* 超小屏幕的额外优化 */
-@media (max-width: 320px) {
-    .nav-links a {
-        font-size: 0.6rem;
-        padding: 0.2rem 0.3rem;
+/* 小屏幕手机适配 */
+@media screen and (max-width: 480px) {
+    .profile-photo img {
+        width: 150px;
+        height: auto;
     }
 
-    .profile-photo {
-        max-width: 120px;
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
     }
 } 

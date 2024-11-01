@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>王家烨的个人简历</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -11,6 +11,9 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul class="nav-links">
                 <li><a href="#home"><i class="fas fa-user"></i> 个人简介</a></li>
                 <li><a href="#education"><i class="fas fa-graduation-cap"></i> 教育经历</a></li>
@@ -170,7 +173,7 @@
             <div class="skill-item">
                 <i class="fas fa-bug"></i>
                 <h3>软件逆向</h3>
-                <p>初步了解软件逆向分析的基本概念��工具使用</p>
+                <p>初步了解软件逆向分析的基本概念和工具使用</p>
                 <div class="skill-progress">
                     <div class="progress-bar" style="width: 60%"></div>
                 </div>
@@ -196,5 +199,18 @@
             </div>
         </div>
     </section>
+
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // 点击导航链接后自动关闭菜单
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html> 
